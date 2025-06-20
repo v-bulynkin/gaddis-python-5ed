@@ -7,9 +7,9 @@ def main():
 	my_list = clean_list(my_names)
 
 	for i in my_list:
-		if i in boy_names:
+		if i.lower() in boy_names:
 			print(f'Имя {i} есть в списке популярных имён мальчиков')
-		elif i in girl_names:
+		elif i.lower() in girl_names:
 			print(f'Имя {i} есть в списке популярных имён девочек')
 		else:
 			print(f'Имени {i} нет в списках популярных имён')
@@ -18,7 +18,7 @@ def get_names(file_path):
 	names_file = open(file_path, 'r')
 	names_raw = names_file.readlines()
 	names_file.close()
-	names_list = [i.rstrip('\n') for i in names_raw]
+	names_list = [(i.rstrip('\n')).lower() for i in names_raw]
 	return names_list
 	
 def clean_list(my_list):
