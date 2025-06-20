@@ -3,7 +3,7 @@
 def main():
 	boy_names = get_names(r'C:\temp\BoyNames.txt')
 	girl_names = get_names(r'C:\temp\GirlNames.txt')
-	my_names = (input('Введите имена, разделённые пробелами, которые вы хотите проверить: ')).split(' ')
+	my_names = (input('Введите имена, разделённые пробелами, которые вы хотите проверить: ')).split()
 	my_list = clean_list(my_names)
 
 	for i in my_list:
